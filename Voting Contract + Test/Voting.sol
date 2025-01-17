@@ -1,8 +1,7 @@
-//SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract Voting {
-    
     struct Candidate {
         string name;
         uint256 voteCount;
@@ -39,7 +38,7 @@ contract Voting {
         emit Voted(msg.sender, candidates[candidateIndex].name);
     }
 
-    function getCandidateCount() public view returns(uint256) {
+    function getCandidateCount() public view returns (uint256) {
         return candidates.length;
     }
 
