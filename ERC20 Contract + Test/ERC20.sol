@@ -1,4 +1,9 @@
 //SPDX-License-Identifier: MIT
+
+//  /\_/\  
+// ( o.o ) 
+//  > ^ <
+
 pragma solidity 0.8.26;
 
 contract ERC20Token {
