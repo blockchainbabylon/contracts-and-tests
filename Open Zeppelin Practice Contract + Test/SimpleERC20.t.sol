@@ -31,5 +31,4 @@ contract SimpleERC20Test is Test {
         vm.expectRevert("Ownable: caller is not the owner");
         token.mint(recipient, 500 * 10 ** 18);
     }
-
 }
