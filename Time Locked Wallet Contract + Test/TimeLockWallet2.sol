@@ -48,4 +48,3 @@ contract TimeLockWallet2 {
         }
         return unlockTime - block.timestamp;
     }
-    
