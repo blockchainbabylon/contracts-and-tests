@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
-import "std-forge/Test.sol";
+import "forge-std/Test.sol";
 import "../src/ParcelTracker.sol";
 
 contract ParcelTrackerTest is Test {
