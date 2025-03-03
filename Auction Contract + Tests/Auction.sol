@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
-contrat DecentralizedAuction {
+contract DecentralizedAuction {
     struct Auction {
         address seller;
         uint256 startTime;
@@ -20,7 +20,7 @@ contrat DecentralizedAuction {
     event AuctionFinalized(uint256 auctionId, address winner, uint256 amount);
 
     function createAuction(uint256 durationInMinutes) external returns(uint256) {
-        require(durationInMintues > 0, "Duration must be greater than 0");
+        require(durationInMinutes > 0, "Duration must be greater than 0");
 
         auctionCount++;
         uint256 auctionId = auctionCount;
@@ -28,7 +28,7 @@ contrat DecentralizedAuction {
         auctions[auctionId] = Auction({
             seller: msg.sender,
             startTime: block.timestamp,
-            endTime: block.timestamp + (durationInMintues * 1 mintues),
+            endTime: block.timestamp + (durationInMinutes * 1 minutes),
             highestBid: 0,
             highestBidder: address(0),
             finalized: false
@@ -63,7 +63,7 @@ contrat DecentralizedAuction {
         auction.finalized = true;
 
         if (auction.highestBidder != address(0)) {
-            paybale(auction.seller).transfer(auction.highestBid);
+            payable(auction.seller).transfer(auction.highestBid);
             emit AuctionFinalized(auctionId, auction.highestBidder, auction.highestBid);
         }
     }
