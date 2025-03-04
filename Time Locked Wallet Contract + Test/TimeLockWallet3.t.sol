@@ -2,10 +2,10 @@
 pragma solidity 0.8.26;
 
 import "forge-std/Test.sol";
-import "../src/TimeLockedWallet3.sol";
+import "../src/TimeLockWallet3.sol";
 
-contract TimeLockedWalletTest is Test {
-    TimeLockedWallet3 wallet;
+contract TimeLockWalletTest is Test {
+    TimeLockWallet3 wallet;
     address owner = address(0x123);
     address nonOwner = address(0x456);
     uint256 unlockTime = 1 days;
