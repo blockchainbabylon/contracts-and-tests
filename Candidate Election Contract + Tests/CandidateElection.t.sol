@@ -5,14 +5,14 @@ import "forge-std/Test.sol";
 import "../src/CandidateElection.sol";
 
 contract CandidateElectionTest is Test {
-    election electionContract;
+    Election electionContract;
     address manager = address(0x123);
     address voter1 = address(0x456);
     address voter2 = address(0x789);
 
     function setUp() public {
         vm.prank(manager);
-        electionContract = new election();
+        electionContract = new Election();
     }
 
     function testAddCandidate() public {
