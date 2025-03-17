@@ -18,7 +18,6 @@ contract Escrow {
         releaseTime = block.timestamp + 30 days;
     }
 
-
     function deposit() public payable {
         require(msg.sender == buyer, "Sorry, you are not the buyer");
         require(msg.value == amount, "You must deposit the correct amount, nothing more, nothing less");
