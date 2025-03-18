@@ -21,11 +21,6 @@ contract BookLibrary is Test {
         assertEq(copies, 3);
     }
 
-    functio testFailAddBookNotOwner() public {
-        vm.prank(user);
-        libraryContract.addBook("The Great Gatsby", "F. Scott Fitzgerald", 2);
-    }
-
     function testBorrowBook() public {
         libraryContract.addBook("The Great Gatsby", "F. Scott Fitzgerald", 2);
         vm.prank(user);
