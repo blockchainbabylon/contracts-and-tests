@@ -57,7 +57,7 @@ contract DecentralizedAuction {
     function finalizeAuction(uint256 auctionId) external {
         Auction storage auction = auctions[auctionId];
         require(block.timestamp >= auction.endTime, "Auction is still ongoing");
-        require(!auction.finalized, "Auction already finalized");
+        require(!auction.finalized, "Auction already finalized"); //auction cannot be already finalized
         require(msg.sender == auction.seller, "Only seller or highest bidder can finalize");
 
         auction.finalized = true;
