@@ -42,7 +42,7 @@ describe("MultiSigWallet", function () {
         expect(transaction.approvalCount).to.equal(0);
     });
 
-    it("should allow owner to approvea transaction", async function () {
+    it("should allow owner to approve a transaction", async function () {
         await wallet.connect(owner1).proposeTransaction(
             recipient.address,
             ethers.utils.parseEther("1"),

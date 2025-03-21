@@ -31,12 +31,14 @@ contract Lottery {
         require(!lotteryActive, "Lottery is already active");
         lotteryActive = true;
         delete participants; //we want lottery to begin with fresh start
+        
         emit LotteryStarted(entryFee);
     }
 
     function enterLottery() public payable lotteryIsActive {
         require(msg.value == entryFee, "Incorrect entry fee");
         participants.push(msg.sender);
+        
         emit ParticipantEntered(msg.sender);
     }
 
